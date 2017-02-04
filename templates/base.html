@@ -106,6 +106,12 @@
       </nav>
       {% endif %}
 
+      {%if PLUGINS.tipue_search}
+      <form id="searchform" action="/search" onsubmit="return (this.elements['q'].value.length > 0)">
+        <input id="searchbox" type="text" name="q" size="12" placeholder="Search">
+      </form>
+      {% endif %}
+
       <ul class="social">
         {% for name, link in SOCIAL %}
         <li><a class="sc-{{ name }}" href="{{ link }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>
